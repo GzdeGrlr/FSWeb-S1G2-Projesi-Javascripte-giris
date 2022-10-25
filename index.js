@@ -61,11 +61,14 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+let a = 23;
+let b = 10;
+
+function carpma(a,b){
+  return a * b;
 }
 
-
+console.log(carpma(a,b))
 
 
 /* Görev 2 : Köpeğin Yaşı */
@@ -77,10 +80,11 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(insanYasi){
+  return insanYasi * 7;
 }
 
+console.log(kopeginYasi(3))
 
 
 /* Görev 3 */
@@ -104,9 +108,47 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
-function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
+function computerChoice() {
+  let pc = Math.random();
+  let bilgisayar;
+
+  if (pc < 0.4) {
+    bilgisayar= "Taş";
+  } 
+  else if (pc >= 0.4 && pc <= 0.7) {
+    bilgisayar= "Kağıt";
+  }
+  else {
+    bilgisayar= "Makas";
+  }
+
+  return bilgisayar;
 }
+console.log(computerChoice())
+
+function oyun(oyuncu, bilgisayar){
+  if (oyuncu == "Taş" && bilgisayar == "Taş") {
+    return "Beraberlik";
+  } else if (oyuncu == "Taş" && bilgisayar == "Kağıt") {
+    return "Kaybettin!";
+  } else if (oyuncu == "Taş" && bilgisayar == "Makas") {
+    return "Kazandın!";
+  } else if (oyuncu == "Kağıt" && bilgisayar == "Kağıt") {
+    return "Beraberlik";
+  } else if (oyuncu == "Kağıt" && bilgisayar == "Makas") {
+    return "Kaybettin!";
+  } else if (oyuncu == "Kağıt" && bilgisayar == "Taş") {
+    return "Kazandın!";
+  } else if (oyuncu == "Makas" && bilgisayar == "Makas") {
+    return "Beraberlik";
+  } else if (oyuncu == "Makas" && bilgisayar == "Taş") {
+    return "Kaybettin!";
+  } else if (oyuncu == "Makas" && bilgisayar == "Kağıt") {
+    return "Kazandın!";
+  }
+}
+
+console.log(oyun())
 
 
 
@@ -120,9 +162,10 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function milDonusturucu(km){
+  return km * 0.621371;
 }
+console.log(milDonusturucu(1))
 
 
 
@@ -134,9 +177,11 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(cm){
+  return cm / 30.48;
 }
+
+console.log(feetDonusturucu(20))
 
 
 
@@ -173,9 +218,24 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
+function notHesapla(not){
+if (not>=90 && not <=100) {
+  return "A aldın";
 }
+else if (not>=80 && not <=89) {
+  return "B aldın";
+}
+else if (not>=70 && not<=79) {
+  return "C aldın";
+}
+else if (not>=60 && not<=69) {
+  return "D aldın";
+} else {
+  return "F aldın";
+}
+}
+
+console.log(notHesapla(85));
 
 
 
