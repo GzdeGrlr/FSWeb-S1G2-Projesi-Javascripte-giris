@@ -20,6 +20,14 @@ Aşağıdakileri yapın:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
+let surucuYasi=17;
+if (surucuYasi >=18) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+
 
 
 /*
@@ -33,7 +41,13 @@ Aşağıdakileri yapınız:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
+let birinciDeger=10;
+let ikinciDeger="10";
 
+if (birinciDeger!==ikinciDeger) {
+  birinciDeger=11;
+  console.log(birinciDeger)
+}
 
 
 
@@ -49,7 +63,10 @@ Aşağıdakileri yapın:
    İPUCU: Number metoduna bakabilirsin
 */
 
+let str="1999";
+let num = parseInt(str);
 
+console.log(num);
 
 
 /*
@@ -148,7 +165,6 @@ function oyun(oyuncu, bilgisayar){
   }
 }
 
-console.log(oyun())
 
 
 
@@ -257,9 +273,22 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 */
 
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function sesliHarfSayaci(text) {
+  const sesliHarfler= ["a","e","i","ı","o","ö","u","ü"];
+
+  let toplam=0;
+
+  for (let harf of text.toLowerCase()) {
+  if (sesliHarfler.includes(harf)) {
+    toplam++;
+  }
+ }
+
+  console.log(`Cümlede ${toplam} adet sesli harf vardır`);
+  return toplam;
 }
+
+console.log(sesliHarfSayaci("Örnek cümle oluşturuldu."))
 
 
 
