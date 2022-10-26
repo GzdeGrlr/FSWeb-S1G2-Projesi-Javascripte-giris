@@ -141,31 +141,43 @@ function computerChoice() {
 
   return bilgisayar;
 }
-console.log(computerChoice())
+
 
 function oyun(oyuncu, bilgisayar){
-  if (oyuncu == "Taş" && bilgisayar == "Taş") {
-    return "Beraberlik";
-  } else if (oyuncu == "Taş" && bilgisayar == "Kağıt") {
-    return "Kaybettin!";
-  } else if (oyuncu == "Taş" && bilgisayar == "Makas") {
+
+  if (oyuncu == "Taş" && bilgisayar == "Makas" 
+  || oyuncu == "Kağıt" && bilgisayar == "Taş" 
+  || oyuncu == "Makas" && bilgisayar == "Kağıt") {
     return "Kazandın!";
-  } else if (oyuncu == "Kağıt" && bilgisayar == "Kağıt") {
+  } else if (oyuncu==bilgisayar) {
     return "Beraberlik";
-  } else if (oyuncu == "Kağıt" && bilgisayar == "Makas") {
+  } else {
     return "Kaybettin!";
-  } else if (oyuncu == "Kağıt" && bilgisayar == "Taş") {
-    return "Kazandın!";
-  } else if (oyuncu == "Makas" && bilgisayar == "Makas") {
-    return "Beraberlik";
-  } else if (oyuncu == "Makas" && bilgisayar == "Taş") {
-    return "Kaybettin!";
-  } else if (oyuncu == "Makas" && bilgisayar == "Kağıt") {
-    return "Kazandın!";
   }
 }
 
 
+console.log(oyun("Taş",computerChoice()))
+
+  // if (oyuncu == "Taş" && bilgisayar == "Taş") {
+  //   return "Beraberlik";
+  // } else if (oyuncu == "Taş" && bilgisayar == "Kağıt") {
+  //   return "Kaybettin!";
+  // } else if (oyuncu == "Taş" && bilgisayar == "Makas") {
+  //   return "Kazandın!";
+  // } else if (oyuncu == "Kağıt" && bilgisayar == "Kağıt") {
+  //   return "Beraberlik";
+  // } else if (oyuncu == "Kağıt" && bilgisayar == "Makas") {
+  //   return "Kaybettin!";
+  // } else if (oyuncu == "Kağıt" && bilgisayar == "Taş") {
+  //   return "Kazandın!";
+  // } else if (oyuncu == "Makas" && bilgisayar == "Makas") {
+  //   return "Beraberlik";
+  // } else if (oyuncu == "Makas" && bilgisayar == "Taş") {
+  //   return "Kaybettin!";
+  // } else if (oyuncu == "Makas" && bilgisayar == "Kağıt") {
+  //   return "Kazandın!";
+  // }
 
 
 /* Görev 4 : Metrik Dönüştürücü */
@@ -218,7 +230,7 @@ function cocukSarkisi(sayi){
   let sarkı=" küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!";
   return sayi + sarkı;
 }
-let sayi=5;
+let sayi;
 for (sayi=5;sayi>0;sayi--) {
   console.log(cocukSarkisi(sayi));
 }
